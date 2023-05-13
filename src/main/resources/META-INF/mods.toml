@@ -1,0 +1,23 @@
+modLoader="javafml"
+loaderVersion="[45,)"
+license="MIT"
+
+[[mods]]
+modId="lolgilded"
+version="1.2.1-1.19.4"
+displayName="Gilded Armor"
+logoFile="logo.png"
+displayURL="https://www.youtube.com/@lieonlion"
+updateJSONURS="https://github.com/LieOnLion"
+authors="LieOnLion"
+description='''
+Adds Gilded Netherite and Enderite to the Game
+When wearing a piece, Piglins wont attack :]
+'''
+
+[[dependencies.examplemod]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.19.4,1.20)"
+ordering="NONE"
+side="BOTH"
