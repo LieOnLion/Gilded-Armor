@@ -1,6 +1,7 @@
 package io.github.lieonlion.lolgilded.mixin;
 
 import io.github.lieonlion.lolgilded.init.ArmorMaterialInit;
+import io.github.lieonlion.lolgilded.init.TagInit;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.item.ArmorItem;
@@ -12,17 +13,13 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
+import java.util.Iterator;
+
 
 @Mixin(PiglinBrain.class)
 public abstract class PiglinBrainMixin {
-    @Inject(method={"wearsGoldArmor"}, at={@At(value="HEAD") }, cancellable=true, locals = LocalCapture.CAPTURE_FAILHARD)
-    private static void wearsGoldArmor(final LivingEntity entity, final CallbackInfoReturnable<Boolean> cir) {
-        for (final ItemStack stack : entity.getArmorItems()) {
-            final Item item = stack.getItem();
-            if (item instanceof ArmorItem && ((ArmorItem) item).getMaterial() == ArmorMaterialInit.GILDED_NETHERITE ||
-                    item instanceof ArmorItem && ((ArmorItem) item).getMaterial()  == ArmorMaterialInit.GILDED_ENDERITE) {
-                cir.setReturnValue(true);
-            }
-        }
+    @Inject(method = "wearsGoldArmor", at = @At(value = "INVOKE_ASSIGN", target = "Lnet/minecraft/item/ItemStack;getItem()Lnet/minecraft/item/Item;"), cancellable = true, locals = LocalCapture.CAPTURE_FAILHARD)
+    private static void wearsGoldArmor(LivingEntity entity, CallbackInfoReturnable<Boolean> info, Iterable<ItemStack> iterable, Iterator iterator, ItemStack stack, Item item) {
+        if (stack.isIn(TagInit.GILDED_ARMOR)) info.setReturnValue(true);
     }
 }
