@@ -1,0 +1,43 @@
+{
+	"schemaVersion": 1,
+	"id": "lolgilded",
+	"version": "0.2.0.beta-1.19.4",
+	"name": "Gilded Armor",
+	"description": "Adds Gilded Netherite and Enderite to the Game\nWhen wearing a piece, Piglins wont attack :]",
+	"authors": [
+		"LieOnLion"
+	],
+	"contact": {
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/gilded-armor-lieonlion",
+		"issues": "https://github.com/LieOnLion/Gilded-Armor/issues",
+		"sources": "https://github.com/LieOnLion/Gilded-Armor"
+	},
+	"license": "MIT",
+	"icon": "assets/lolgilded/logo.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.lieonlion.lolgilded.GildedArmor"
+		]
+	},
+	"mixins": [
+		"lolgilded.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.youtube": "https://www.youtube.com/@lieonlion",
+				"modmenu.discord": "https://discord.com/invite/sA42pp6cuX"
+			}
+		}
+	}
+}

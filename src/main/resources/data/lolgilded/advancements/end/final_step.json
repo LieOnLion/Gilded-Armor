@@ -1,0 +1,47 @@
+{
+  "display": {
+    "icon": {
+      "item": "lolgilded:gilded_enderite_chestplate"
+    },
+    "title": {
+      "translate": "advancement.lolgilded.final_step"
+    },
+    "description": {
+      "translate": "advancement.lolgilded.final_step.desc"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "lolenderite:end/unstoppable",
+    "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lolgilded:gilded_enderite_helmet"
+            ]
+          },
+          {
+            "items": [
+              "lolgilded:gilded_enderite_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "lolgilded:gilded_enderite_leggings"
+            ]
+          },
+          {
+            "items": [
+              "lolgilded:gilded_enderite_boots"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

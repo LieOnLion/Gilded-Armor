@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "io.github.lieonlion.lolgilded.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"ExampleMixin",
+		"PiglinBrainMixin",
+		"EndermanMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
